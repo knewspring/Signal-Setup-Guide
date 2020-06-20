@@ -33,4 +33,4 @@ Work in progress
 ## Cotributing
 You are welcome to contribute on this guide. If you have any questions please write an issues and I will try to help.
 
-You are recommended to [open an issue here](.issues/new/choose) if you face a difficulties to let the communities help you too and contributing to the communities in the process.
+You are recommended to [open an issue here](../../issues/new/choose) if you face a difficulties to let the communities help you too and contributing to the communities in the process.
