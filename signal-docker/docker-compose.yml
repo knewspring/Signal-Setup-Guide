@@ -55,6 +55,7 @@ services:
   redis_master:
     image: redis:5
     container_name: redis_master
+    restart:        always
     ports:
       - '6379:6379'
     volumes:
@@ -62,6 +63,7 @@ services:
   redis_slave:
     image: redis:5
     container_name: redis_slave
+    restart:        always
     command: redis-server --port 6380 --slaveof 127.0.0.1 6379 --slave-announce-ip 127.0.0.1
     ports:
       - '6380:6380'
@@ -70,6 +72,7 @@ services:
   sentinel:
     build: ./sentinel
     container_name: redis_sentinel
+    restart:        always
     ports:
       - '26379:26379'
     environment:
