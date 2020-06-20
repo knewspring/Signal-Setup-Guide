@@ -1,5 +1,5 @@
 # Signal Android
-This guide is written by using Signal-Android branch Master version 4.53.6
+This guide is written using Signal-Android version 4.53.6
 
 ## Requirement
 * Android Studio 3.5
@@ -213,11 +213,7 @@ file="src/main/java/com/company/chatname/contacts/ContactSelectionListAdapter.ja
 ## FAQ
 Q: How do i build an APK?
 
-A: You can just run `./gradlew clean assemblePlayRelease --exclude-task signProductionPlayRelease`. For more detailed instruction, follow <a href="https://github.com/signalapp/Signal-Android/blob/master/ReproducibleBuilds.md">Official Signal Android ReproducibleBuild Guide</a>.
-
-Q: Why did I need to change the Attachment Path?
-
-A: For now, I have no idea why you can't upload to a path except root, I've tried modifying every permission in AWS but to no avail. 
+A: You can just run `./gradlew clean assemblePlayRelease --exclude-task signProductionPlayRelease`. 
 
 Q: How did I make Maps works?
 
