@@ -2,7 +2,7 @@
 This guide is written using Signal-Android version 4.53.6
 
 ## Requirement
-* Android Studio 3.5
+* Android Studio 4.0
 * Java SE 14
 * SDK 28
 * NDK
@@ -14,19 +14,20 @@ This guide is written using Signal-Android version 4.53.6
 git clone https://github.com/signalapp/Signal-Android.git && cd Signal-Android
 ```
 
-2. Comment out `distributionSha256Sum` on `gradle/wrapper/gradle-wrapper.properties`
+2. Comment out `distributionSha256Sum` on `gradle/wrapper/gradle-wrapper.properties` and change the grale version from `5.6.2` to `6.4.1`
 
 ```
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
 #distributionSha256Sum=027fdd265d277bae65a0d349b6b8da02135b0b8e14ba891e26281fa877fe37a2
-distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.2-all.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.4.1-all.zip
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 ```
 
-3. Use 'Keystore Explorer’, edit `whisper.store` files (the password is "whisper" without quote), insert your all your server certificates there. 
-4. Update URL with own server in `app/build.gradle` (be sure to use https and don't include trailing slash). If you are having a hard time finding your `Cloudfront domain`, you can find it in <a href="https://console.aws.amazon.com/cloudfront/">CloudFront console</a> formated as `random-id.cloudfront.net`.
+3. Install the `21.0.6113669` NDK version [link](https://developer.android.com/studio/projects/install-ndk)
+4. Use 'Keystore Explorer’, edit `whisper.store` files (the password is "whisper" without quote), insert your all your server certificates there. 
+5. Update URL with own server in `app/build.gradle` (be sure to use https and don't include trailing slash). If you are having a hard time finding your `Cloudfront domain`, you can find it in <a href="https://console.aws.amazon.com/cloudfront/">CloudFront console</a> formated as `random-id.cloudfront.net`.
 ```
 ...
 
@@ -211,10 +212,6 @@ file="src/main/java/com/company/chatname/contacts/ContactSelectionListAdapter.ja
 `app/src/main/res/values/strings.xml`
 
 ## FAQ
-Q: How do i build an APK?
-
-A: You can just run `./gradlew clean assemblePlayRelease --exclude-task signProductionPlayRelease`. 
-
 Q: How did I make Maps works?
 
 A: On Android, search for `com.google.android.geo.API_KEY` and change the value below that line with your own Google Maps API Key.
