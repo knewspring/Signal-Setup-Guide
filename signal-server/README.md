@@ -20,8 +20,8 @@ git clone https://github.com/signalapp/Signal-Server.git && cd Signal-Server
 ```
 
 2. Create your own `config.yml`, put it inside `signal-server/service/config/`. You can take a look at the [example here](../signal-server/example-signal.yml).
-
-3. Build the server
+3. Remove `@Length(min = 72,max= 72)`  from  `service/src/main/java/org/whispersystems/textsecuregcm/controllers/ProfileController.java`
+4. Build the server
 
 ```
 mvn clean install -DskipTests
