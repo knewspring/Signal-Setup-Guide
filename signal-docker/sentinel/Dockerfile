@@ -1,5 +1,7 @@
 FROM redis:3
 
+MAINTAINER AQNOUCH Mohammed <aqnouch.mohammed@gmail.com>
+
 EXPOSE 26379
 COPY sentinel.conf /etc/redis/sentinel.conf
 RUN chown redis:redis /etc/redis/sentinel.conf
