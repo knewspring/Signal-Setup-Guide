@@ -10,4 +10,8 @@ ENV SENTINEL_NAME mysentinel
 ENV SENTINEL_DOWN_AFTER 30000
 ENV SENTINEL_FAILOVER 180000
 COPY sentinel-entrypoint.sh /usr/local/bin/
+COPY sentinel-entrypoint.sh /usr/local/bin/
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
+RUN ln -s /usr/local/bin/docker-entrypoint.sh 
+
 ENTRYPOINT ["sentinel-entrypoint.sh"]
